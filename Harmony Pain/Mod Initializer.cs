@@ -17,7 +17,7 @@ namespace VermilionDLL.HarmonyPain
         {
             ModParameters.Path = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
             new Harmony("TheVermilionCrossExtra.Md5488").PatchAll();
-            SkinUtil.GetArtWorks(new DirectoryInfo(ModParameters.Path + "/ArtWork")); //This will make use of a new folder in your Assemblies called 'ArtWork'
+            SkinUtil.GetArtWorks(new DirectoryInfo(ModParameters.Path + "/ArtWork"));//This will make use of a new folder in your Assemblies called 'ArtWork'
             SkinUtil.PreLoadBufIcons(); //This will load Buf Icons
             LocalizeUtil.AddLocalize(); //This will add localization, which you'll need to give a description to your buf
 

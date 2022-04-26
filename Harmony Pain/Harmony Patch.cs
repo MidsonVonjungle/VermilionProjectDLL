@@ -87,6 +87,13 @@ namespace VermilionDLL.HarmonyPain
                 __result = diceAttackEffect;
             }
         }
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(DropBookInventoryModel), "LoadFromSaveData")]
+        public static void Book_LoadFromSaveData(DropBookInventoryModel __instance)
+        {
+            var bookCount = __instance.GetBookCount(new LorId(ModParameters.PackageId, 1));
+            if (bookCount < 99) __instance.AddBook(new LorId(ModParameters.PackageId, 1), 99 - bookCount);
+        }
 
 
     }

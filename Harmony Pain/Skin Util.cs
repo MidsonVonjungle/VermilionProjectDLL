@@ -30,8 +30,6 @@ namespace VermilionDLL.HarmonyPain
                 ModParameters.ArtWorks[fileNameWithoutExtension] = value;
             }
         }
-        public static Dictionary<string, Type> CustomEffects = new Dictionary<string, Type>();
-        public static string path;
 
         public static void PreLoadBufIcons() //Add Custom Buff Icons
         {

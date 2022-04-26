@@ -41,7 +41,7 @@ namespace VermilionDLL.HarmonyPain
 
         public static List<Tuple<string, List<int>, string>> SkinNameIds = new List<Tuple<string, List<int>, string>>
         {
-            new Tuple<string, List<int>, string>("ADD EGO SKIN", new List<int> { 10000001, 4 }, "ADD NORMAL SKIN")
+            //new Tuple<string, List<int>, string>("ADD EGO SKIN", new List<int> { 1000003, 3 }, "ADD NORMAL SKIN")
         };
         
         public static readonly List<int> BooksIds = new List<int>

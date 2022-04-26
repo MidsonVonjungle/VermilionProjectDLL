@@ -23,13 +23,13 @@ namespace VermilionDLL.Harmony_Pain
                 Texture2D texture = new Texture2D(2, 2); // Initialise empty texture w/ width & height.
                 Texture2D textureGlow = new Texture2D(2, 2); // Same thing as above, but for glow.
                                                              
-                var bookIconDir = new DirectoryInfo(ModParameters.Path + "/ArtWork"); //Don't mind this, I want to see if I can make it connect to the ArtWork folder instead later
+                var bookIconDir = new DirectoryInfo(ModParameters.Path + "/ArtWork"); //Don't mind this, this is so that it connects to the ArtWork folder instead and it works
                 //var bookIconDir = new DirectoryInfo(ResourceDir + "/BookIcon");// Looks for BookIcon folder in Resource.
                 texture.LoadImage(File.ReadAllBytes(bookIconDir + "/VermilionIcon.png")); // Load image into texture var; replaces width & height to new texture.
                 textureGlow.LoadImage(File.ReadAllBytes(bookIconDir + "/VermilionIconGlow.png")); // Same as above, but for glow. This can be the same texture if neccecary.
                 UIIconManager.IconSet YourIcon = new UIIconManager.IconSet
                 {
-                    type = "VermilionIcon", //Icon/Story Type.
+                    type = "VermilionIcon1", //Icon/Story Type.
                     icon = Sprite.Create(texture, new Rect(0f, 0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100), // Creates new sprite icon from texture.
                     color = Color.white, // Icon set is also used for things like stagger resist; this color modifies color for things like HP and BP.
                     iconGlow = Sprite.Create(textureGlow, new Rect(0f, 0f, textureGlow.width, textureGlow.height), new Vector2(0.5f, 0.5f), 100),
@@ -43,7 +43,6 @@ namespace VermilionDLL.Harmony_Pain
                 Singleton<ModContentManager>.Instance.AddErrorLog("Failed to load icon");
             }
         }
-            public static Dictionary<string, Type> ResourceDir = new Dictionary<string, Type>();
     }
     
 }
