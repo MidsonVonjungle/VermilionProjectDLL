@@ -61,7 +61,6 @@
     <Compile Include="Card Effects\RampStrikeAbility.cs" />
     <Compile Include="Card Effects\Restore 3 Light.cs" />
     <Compile Include="Harmony Pain\Harmony Patch.cs" />
-    <Compile Include="Harmony Pain\IconAdder.cs" />
     <Compile Include="Harmony Pain\Localize Util.cs" />
     <Compile Include="Harmony Pain\Mod Initializer.cs" />
     <Compile Include="Harmony Pain\Mod Parameters.cs" />

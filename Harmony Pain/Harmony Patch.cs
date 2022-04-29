@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Battle.DiceAttackEffect;
 using HarmonyLib;
 using LOR_DiceSystem;
+using UI;
 using UnityEngine;
 using Workshop;
 using Object = UnityEngine.Object;
@@ -15,6 +16,7 @@ namespace VermilionDLL.HarmonyPain
     [HarmonyPatch]
     public class HarmoyPatch_Re21341
     {
+        
         [HarmonyPostfix]
         [HarmonyPatch(typeof(BattleUnitView), "ChangeSkin")]
         public static void
@@ -68,8 +70,8 @@ namespace VermilionDLL.HarmonyPain
                 List<DiceCardXmlInfo> _onlyCards = __instance.GetOnlyCards();
                 _onlyCards.Clear();
                 _onlyCards.AddRange(__instance.ClassInfo.EquipEffect.OnlyCard
-                    .Select(x => ItemXmlDataList.instance.GetCardItem(new LorId(modId, x)))
-                    .Where(x => x != null));
+                   .Select(x => ItemXmlDataList.instance.GetCardItem(new LorId(modId, x)))
+                   .Where(x => x != null));
             }
         }
    
@@ -87,20 +89,19 @@ namespace VermilionDLL.HarmonyPain
                 __result = diceAttackEffect;
             }
         }
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(BookModel), "GetThumbSprite")]
-        [HarmonyPatch(typeof(BookXmlInfo), "GetThumbSprite")]
-        public static void General_GetThumbSprite(object __instance, ref Sprite __result)
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(UISpriteDataManager), "Init")]
+        public static void UISpriteDataManager_Init(UISpriteDataManager __instance)
         {
-            switch (__instance)
-            {
-                case BookXmlInfo bookInfo:
-                    SkinUtil.GetThumbSprite(bookInfo.id, ref __result);
-                    break;
-                case BookModel bookModel:
-                    SkinUtil.GetThumbSprite(bookModel.BookId, ref __result);
-                    break;
-            }
+            foreach (var artWork in ModParameters.ArtWorks.Where(x =>
+                         !x.Key.Contains("Glow") && !__instance._storyicons.Exists(y => y.type.Equals(x.Key))))
+                __instance._storyicons.Add(new UIIconManager.IconSet
+                {
+                    type = artWork.Key,
+                    icon = artWork.Value,
+                    iconGlow = ModParameters.ArtWorks.FirstOrDefault(x => x.Key.Equals($"{artWork.Key}Glow")).Value ??
+                               artWork.Value
+                });
         }
     }
 }

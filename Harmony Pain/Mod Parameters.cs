@@ -19,17 +19,6 @@ namespace VermilionDLL.HarmonyPain
 
         public static readonly List<int> NoInventoryCardList = new List<int> { };
 
-        public static readonly Dictionary<string, List<int>> SpritePreviewChange = new Dictionary<string, List<int>>
-        {
-            { "Thumb", new List<int> { 10000001 } },
-        };
-
-        public static readonly Dictionary<string, List<int>> DefaultSpritePreviewChange =
-            new Dictionary<string, List<int>>
-            {
-             
-            };
-
         public static readonly List<SkinNames> SkinParameters = new List<SkinNames>
         {
             new SkinNames

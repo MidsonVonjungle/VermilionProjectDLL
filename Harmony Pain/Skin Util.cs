@@ -41,21 +41,6 @@ namespace VermilionDLL.HarmonyPain
                          !BattleUnitBuf._bufIconDictionary.ContainsKey(x.Key)))
                 BattleUnitBuf._bufIconDictionary.Add(artWork.Key, artWork.Value);
         }
-        public static void GetThumbSprite(LorId bookId, ref Sprite result)
-        {
-            if (bookId.packageId != ModParameters.PackageId) return;
-            var sprite = ModParameters.SpritePreviewChange.FirstOrDefault(x => x.Value.Contains(bookId.id));
-            if (!string.IsNullOrEmpty(sprite.Key) && sprite.Value.Any())
-            {
-                result = ModParameters.ArtWorks[sprite.Key];
-                return;
-            }
-
-            var defaultSprite =
-                ModParameters.DefaultSpritePreviewChange.FirstOrDefault(x => x.Value.Contains(bookId.id));
-            if (!string.IsNullOrEmpty(defaultSprite.Key) && defaultSprite.Value.Any())
-                result = Resources.Load<Sprite>(defaultSprite.Key);
-        }
     }
     public class SkinNames
     {
