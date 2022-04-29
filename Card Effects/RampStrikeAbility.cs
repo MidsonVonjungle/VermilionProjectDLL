@@ -11,7 +11,7 @@ namespace VermilionDLL.Card_Effects
 	{
 
 		public static string Desc =
-			"Each stack of Heat boost the power of the die in this page by 1. If this page hits an enemy, use it again on another random enemy once. (Does not re-target already hit enemies)";
+			"For each stack of Heat, all Dice on this page gain +1 Power. If this page hits an enemy, use it again on another random enemy. (Once per page, does not re-target already hit enemies)";
 		public override void OnUseCard()
 		{
 			BattleUnitBuf battleUnitBuf = owner.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_VermilionHeatBuf_md5488);

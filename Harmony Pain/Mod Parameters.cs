@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 namespace VermilionDLL.HarmonyPain
@@ -9,14 +10,25 @@ namespace VermilionDLL.HarmonyPain
         public const string PackageId = "TheVermilionCrossExtra.Md5488";
         public static string Path;
         public static readonly Dictionary<string, Sprite> ArtWorks = new Dictionary<string, Sprite>();
-        public static readonly Dictionary<string, Sprite> CustomEffects = new Dictionary<string, Sprite>();
+        //public static readonly Dictionary<string, Sprite> CustomEffects = new Dictionary<string, Sprite>();
 
         public static readonly List<int> PersonalCardList = new List<int> { };
         public static readonly List<int> EgoPersonalCardList = new List<int> { };
         public static readonly List<int> UntransferablePassives = new List<int> { };
-        
+        public static List<LorId> BooksIds = new List<LorId>();
+
         public static readonly List<int> NoInventoryCardList = new List<int> { };
 
+        public static readonly Dictionary<string, List<int>> SpritePreviewChange = new Dictionary<string, List<int>>
+        {
+            { "Thumb", new List<int> { 10000001 } },
+        };
+
+        public static readonly Dictionary<string, List<int>> DefaultSpritePreviewChange =
+            new Dictionary<string, List<int>>
+            {
+             
+            };
 
         public static readonly List<SkinNames> SkinParameters = new List<SkinNames>
         {
@@ -44,9 +56,5 @@ namespace VermilionDLL.HarmonyPain
             //new Tuple<string, List<int>, string>("ADD EGO SKIN", new List<int> { 1000003, 3 }, "ADD NORMAL SKIN")
         };
         
-        public static readonly List<int> BooksIds = new List<int>
-        {
-            
-        };
     }
 }

@@ -59,6 +59,20 @@ namespace VermilionDLL.Passives
                 }
             }
         }
+        public override void OnRoundEnd()
+        {
+            int removestacks = 1;
+            BattleUnitBuf battleUnitBuf = owner.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_VermilionHeatBuf_md5488);
+
+            if (battleUnitBuf != null)
+            {
+                battleUnitBuf.stack -= removestacks;
+                if (battleUnitBuf.stack <= 0)
+                {
+                    battleUnitBuf.Destroy();
+                }
+            }
+        }
         public override void OnWaveStart()
         {
             owner.allyCardDetail.DrawCards(2);

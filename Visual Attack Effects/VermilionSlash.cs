@@ -50,7 +50,7 @@ namespace VermilionDLL.Visual_Attack_Effects
 
 		public override void SetScale(float scaleFactor)
 		{
-			scaleFactor *= 0.5f;
+			scaleFactor *= 0.7f;
 			base.SetScale(scaleFactor);
 		}
 

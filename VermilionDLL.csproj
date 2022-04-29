@@ -66,6 +66,7 @@
     <Compile Include="Harmony Pain\Mod Initializer.cs" />
     <Compile Include="Harmony Pain\Mod Parameters.cs" />
     <Compile Include="Harmony Pain\Skin Util.cs" />
+    <Compile Include="Passives\CrossGuard.cs" />
     <Compile Include="Passives\The Vermilion Cross Passive.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Visual Attack Effects\VermilionBlunt.cs" />

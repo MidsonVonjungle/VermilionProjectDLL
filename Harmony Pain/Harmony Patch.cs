@@ -88,14 +88,20 @@ namespace VermilionDLL.HarmonyPain
             }
         }
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(DropBookInventoryModel), "LoadFromSaveData")]
-        public static void Book_LoadFromSaveData(DropBookInventoryModel __instance)
+        [HarmonyPatch(typeof(BookModel), "GetThumbSprite")]
+        [HarmonyPatch(typeof(BookXmlInfo), "GetThumbSprite")]
+        public static void General_GetThumbSprite(object __instance, ref Sprite __result)
         {
-            var bookCount = __instance.GetBookCount(new LorId(ModParameters.PackageId, 1));
-            if (bookCount < 99) __instance.AddBook(new LorId(ModParameters.PackageId, 1), 99 - bookCount);
+            switch (__instance)
+            {
+                case BookXmlInfo bookInfo:
+                    SkinUtil.GetThumbSprite(bookInfo.id, ref __result);
+                    break;
+                case BookModel bookModel:
+                    SkinUtil.GetThumbSprite(bookModel.BookId, ref __result);
+                    break;
+            }
         }
-
-
     }
 }
 

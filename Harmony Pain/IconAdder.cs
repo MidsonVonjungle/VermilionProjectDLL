@@ -29,7 +29,7 @@ namespace VermilionDLL.Harmony_Pain
                 textureGlow.LoadImage(File.ReadAllBytes(bookIconDir + "/VermilionIconGlow.png")); // Same as above, but for glow. This can be the same texture if neccecary.
                 UIIconManager.IconSet YourIcon = new UIIconManager.IconSet
                 {
-                    type = "VermilionIcon1", //Icon/Story Type.
+                    type = "VermilionIcon", //Icon/Story Type.
                     icon = Sprite.Create(texture, new Rect(0f, 0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100), // Creates new sprite icon from texture.
                     color = Color.white, // Icon set is also used for things like stagger resist; this color modifies color for things like HP and BP.
                     iconGlow = Sprite.Create(textureGlow, new Rect(0f, 0f, textureGlow.width, textureGlow.height), new Vector2(0.5f, 0.5f), 100),
@@ -42,7 +42,6 @@ namespace VermilionDLL.Harmony_Pain
             {
                 Singleton<ModContentManager>.Instance.AddErrorLog("Failed to load icon");
             }
-        }
-    }
-    
+		}
+    } 
 }
