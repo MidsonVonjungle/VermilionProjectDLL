@@ -34,11 +34,29 @@
     <Reference Include="0Harmony">
       <HintPath>..\0Harmony.dll</HintPath>
     </Reference>
+    <Reference Include="0KamiyoStaticHarmony">
+      <HintPath>..\..\Vermilion Project\NormalInvitation\Assemblies\0KamiyoStaticHarmony.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>F:\Steam\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BongBongEnterprises_Lite">
       <HintPath>..\..\Vermilion Project\NormalInvitation\Assemblies\BongBongEnterprises_Lite.dll</HintPath>
+    </Reference>
+    <Reference Include="KamiyoStaticBLL">
+      <HintPath>..\..\Vermilion Project\NormalInvitation\Assemblies\KamiyoStaticBLL.dll</HintPath>
+    </Reference>
+    <Reference Include="KamiyoStaticUtil">
+      <HintPath>..\..\Vermilion Project\NormalInvitation\Assemblies\KamiyoStaticUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\Vermilion Project\NormalInvitation\Assemblies\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\..\Vermilion Project\NormalInvitation\Assemblies\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\Vermilion Project\NormalInvitation\Assemblies\MonoMod.Utils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -61,10 +79,8 @@
     <Compile Include="Card Effects\RampStrikeAbility.cs" />
     <Compile Include="Card Effects\Restore 3 Light.cs" />
     <Compile Include="Harmony Pain\Harmony Patch.cs" />
-    <Compile Include="Harmony Pain\Localize Util.cs" />
     <Compile Include="Harmony Pain\Mod Initializer.cs" />
     <Compile Include="Harmony Pain\Mod Parameters.cs" />
-    <Compile Include="Harmony Pain\Skin Util.cs" />
     <Compile Include="Passives\CrossGuard.cs" />
     <Compile Include="Passives\The Vermilion Cross Passive.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

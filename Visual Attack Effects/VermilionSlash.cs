@@ -24,7 +24,7 @@ namespace VermilionDLL.Visual_Attack_Effects
 			base.transform.localRotation = Quaternion.identity;
 			this.duration = destroyTime;
 			Texture2D texture2D = new Texture2D(2, 2);
-			texture2D.LoadImage(File.ReadAllBytes(ModParameters.Path + "/CustomEffect/VermilionSlash.png"));
+			texture2D.LoadImage(File.ReadAllBytes(MidsonModParameters.Path + "/CustomEffect/VermilionSlash.png"));
 			this.spr.sprite = Sprite.Create(texture2D, new Rect(0f, 0f, (float)texture2D.width, (float)texture2D.height), new Vector2(0.30f, 0.60f)); //Vector2(Horizontal, Vertical)
 			this.ResetLocalTransform(base.transform);
 			bool flag = this._self.direction == Direction.RIGHT;
